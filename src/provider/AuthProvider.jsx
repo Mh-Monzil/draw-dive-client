@@ -5,9 +5,10 @@ import {
     signOut,
     GoogleAuthProvider,
     GithubAuthProvider,
-    updateProfile
+    updateProfile,
+    onAuthStateChanged
   } from "firebase/auth";
-  import { createContext, useState } from "react";
+  import { createContext, useEffect, useState } from "react";
 import { auth } from "../Firebase/firebase.init";
   
   export const AuthContext = createContext(null);
@@ -22,6 +23,7 @@ import { auth } from "../Firebase/firebase.init";
     };
   
     const updateUserProfile = (name,image) => {
+      setLoading(false);
       return updateProfile(auth.currentUser, {
         displayName: name,
         photoURL: image
@@ -44,14 +46,23 @@ import { auth } from "../Firebase/firebase.init";
     const githubProvider = new GithubAuthProvider();
   
     const googleLogin = () => {
+      setLoading(true);
       return signInWithPopup(auth, googleProvider);
     };
     
     const githubLogin = () => {
+      setLoading(true);
       return signInWithPopup(auth, githubProvider);
     };
   
-  
+    useEffect(() => {
+      const unSubscribe = onAuthStateChanged(auth, (currenUser) => {
+        console.log(currenUser, "currentUser");
+        setUser(currenUser);
+        setLoading(false);
+      });
+      return () => unSubscribe();
+    },[]);
     
   
     const authInfo = { user, loading, createUser, loginUser, setUser,googleLogin, logOut, githubLogin,updateUserProfile };

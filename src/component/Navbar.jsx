@@ -4,25 +4,8 @@ import UseAuth from "../hooks/UseAuth";
 import Profile from "./Profile";
 
 const Navbar = () => {
-  const { user, loading, logOut } = UseAuth();
+  const { user, loading } = UseAuth();
   const [showDropdown, setShowDropdown] = useState(false);
-  const [scroll, setScroll] = useState(false);
-  const TOP_OFFSET = 80;
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY >= TOP_OFFSET) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   const NavLinks = (
     <>
       <NavLink
@@ -76,7 +59,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="navbar  rounded-t-3xl md:py-4">
+    <div className="navbar md:py-4 sticky top-0 backdrop-blur-lg bg-[#FAF4F2]/80 z-40">
       <div className="navbar-start ">
         <div
           onClick={() => setShowDropdown(!showDropdown)}

@@ -1,19 +1,39 @@
-import { Controller, useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
-import Select from "react-select";
+
+import UseAuth from "../hooks/UseAuth";
 
 const AddCraftItem = () => {
-  const {
-    register,
-    handleSubmit,
-    control,
-    formState: { errors },
-  } = useForm();
+    const {user} = UseAuth();
+    console.log(user);
 
-  const onSubmit = (data) => {
-    // const { item_name } = data;
-    console.log(data);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const item_name = form.item_name.value;
+    const category_name = form.category_name.value;
+    const customizable = form.customizable.value;
+    const photo = form.photo.value;
+    const price = form.price.value;
+    const processing_time = form.processing_time.value;
+    const rating = form.rating.value;
+    const short_description = form.short_description.value;
+    const stock_status = form.stock_status.value;
+
+    const artCraftInfo = { item_name, category_name, customizable, photo, price, processing_time, rating, short_description, stock_status };
+    console.log(artCraftInfo);
+
+    fetch("http://localhost:5000/art_craft_items", {
+        method: "POST",
+        headers: { 
+            'Content-Type': 'application/json' 
+        },
+        body: JSON.stringify(artCraftInfo)
+    })
+    .then(res => res.json())
+    .then(data => {
+        console.log(data);
+    })
   };
+
 
   return (
     <div className="text-center">
@@ -27,7 +47,7 @@ const AddCraftItem = () => {
           data-aos="fade-right"
           data-aos-duration="300"
           data-aos-easing="ease-in-out"
-          onSubmit={handleSubmit(onSubmit)}
+          onSubmit={handleSubmit}
           className="space-y-4 lg:w-3/5 my-12 h-full mx-auto p-6 md:p-10 bg-white backdrop-blur-sm rounded-lg  shadow-md shadow-red-100"
         >
           <div className="flex justify-center mb-2">
@@ -44,15 +64,12 @@ const AddCraftItem = () => {
               <div className="relative">
                 <input
                   type="name"
-                  name="name"
+                  name="item_name"
                   placeholder="Enter your name"
                   className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
-                  {...register("item_name", { required: true })}
+                  required
                 />
               </div>
-              {errors.item_name && (
-                <span className="text-red-500">Item Name is required</span>
-              )}
             </div>
             {/* input  */}
             <div>
@@ -62,11 +79,10 @@ const AddCraftItem = () => {
               {/* <div className="relative"> */}
               <select
                 id="country"
-                name="country"
+                name="category_name"
                 className=" w-full pr-10 p-2.5 text-base border-2 border-red-100 focus:outline-none  focus:border-red-300 sm:text-sm rounded-md font-semibold"
-                {...register("category_name", { required: true })}
+                required
               >
-                <option className="font-semibold" selected disabled>Select Category</option>
                 <option className="font-semibold" value="Landscape Painting">Landscape Painting</option>
                 <option className="font-semibold" value="Portrait Drawing">Portrait Drawing</option>
                 <option className="font-semibold" value="Watercolor Painting">Watercolour Painting</option>
@@ -75,9 +91,6 @@ const AddCraftItem = () => {
                 <option className="font-semibold" value="Cartoon Drawing">Cartoon Drawing</option>
               </select>
               {/* </div> */}
-              {errors.category_name && (
-                <span className="text-red-500">Category Name is required</span>
-              )}
             </div>
             {/* input  */}
             <div className="col-span-2">
@@ -90,12 +103,9 @@ const AddCraftItem = () => {
                   name="short_description"
                   placeholder="Enter your name"
                   className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
-                  {...register("short_description", { required: true })}
+                  required
                 />
               </div>
-              {errors.short_description && (
-                <span className="text-red-500">Short Description is required</span>
-              )}
             </div>
             {/* input  */}
             <div>
@@ -108,12 +118,9 @@ const AddCraftItem = () => {
                   name="price"
                   placeholder="Enter your name"
                   className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
-                  {...register("price", { required: true })}
+                  required
                 />
               </div>
-              {errors.price && (
-                <span className="text-red-500">Price is required</span>
-              )}
             </div>
             {/* input  */}
             <div>
@@ -126,15 +133,26 @@ const AddCraftItem = () => {
                   min='1'
                   max='5'
                   name="rating"
-                  
                   placeholder="Enter your name"
                   className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
-                  {...register("rating", { required: true })}
+                  required
                 />
               </div>
-              {errors.rating && (
-                <span className="text-red-500">Rating is required</span>
-              )}
+            </div>
+            {/* input  */}
+            <div>
+              <label className="label">
+                <span className="font-semibold">Image URL</span>
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  name="photo"
+                  placeholder="Enter your name"
+                  className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
+                  required
+                />
+              </div>
             </div>
             {/* input  */}
             <div>
@@ -146,16 +164,12 @@ const AddCraftItem = () => {
                 id="country"
                 name="customizable"
                 className=" w-full pr-10 p-2.5 text-base border-2 border-red-100 focus:outline-none  focus:border-red-300 sm:text-sm rounded-md font-semibold"
-                {...register("customizable", { required: true })}
+                required
               >
-                <option className="font-semibold" selected disabled>Select</option>
                 <option className="font-semibold" value="Yes">Yes</option>
                 <option className="font-semibold" value="No">No</option>
               </select>
               {/* </div> */}
-              {errors.customizable && (
-                <span className="text-red-500">Customizable Name is required</span>
-              )}
             </div>
             {/* input  */}
             <div>
@@ -168,12 +182,9 @@ const AddCraftItem = () => {
                   name="processing_time"
                   placeholder="Enter your name"
                   className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
-                  {...register("processing_time", { required: true })}
+                  required
                 />
               </div>
-              {errors.processing_time && (
-                <span className="text-red-500">Processing Time Name is required</span>
-              )}
             </div>
             {/* input  */}
             <div>
@@ -184,21 +195,17 @@ const AddCraftItem = () => {
               <select
                 name="stock_status"
                 className=" w-full pr-10 p-2.5 text-base border-2 border-red-100 focus:outline-none  focus:border-red-300 sm:text-sm rounded-md font-semibold"
-                {...register("stock_status", { required: true })}
+                required
               >
-                <option className="font-semibold" selected disabled>Select Status</option>
                 <option className="font-semibold" value="In Stock">In Stock</option>
                 <option className="font-semibold" value="Made to Order">Made to Order</option>
               </select>
               {/* </div> */}
-              {errors.stock_status && (
-                <span className="text-red-500">Customizable Name is required</span>
-              )}
             </div>
           </div>
 
           <div className="form-control mt-4">
-            <button className="btn bg-[#E76F51] text-white font-semibold text-xl hover:bg-[#e25f3f] border border-[@#E76F51] hover:border-[#E76F51">
+            <button type="submit" className="btn bg-[#E76F51] text-white font-semibold text-xl hover:bg-[#e25f3f] border border-[@#E76F51] hover:border-[#E76F51 mt-2">
               Add
             </button>
           </div>

@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { IoEye, IoEyeOff, IoMail } from "react-icons/io5";
-import { FaGithub, FaLock, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLock } from "react-icons/fa";
 import { useState } from "react";
 import { FcGoogle } from "react-icons/fc";
 import UseAuth from "../hooks/UseAuth";
@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [errorText, setErrorText] = useState("");
-  const { loginUser, user, loading, googleLogin, githubLogin, twitterLogin } =
+  const { loginUser, user, loading, googleLogin, githubLogin } =
     UseAuth();
   const location = useLocation();
   const navigate = useNavigate();

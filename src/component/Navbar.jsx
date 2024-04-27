@@ -1,5 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import UseAuth from "../hooks/UseAuth";
 import Profile from "./Profile";
 
@@ -91,7 +91,6 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="">
-          {/* <img src={logo} className="w-12 h-12" /> */}
           <p className="text-3xl font-bold">
             Draw<span className="text-[#E76F51]">Dive</span>
           </p>

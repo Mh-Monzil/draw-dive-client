@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/all_art_craft",
         element: <AllArtCraft />,
-        loader: () => fetch("https://painting-server-wheat.vercel.app/craft_items")
+        loader: () => fetch("http://localhost:5000/craft_items")
       },
       {
         path: "/add-craft_item",
@@ -56,7 +56,7 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ViewDetails />
         </PrivateRoute>,
-        loader: ({params}) => fetch(`https://painting-server-wheat.vercel.app/view_details/${params.id}`)
+        loader: ({params}) => fetch(`http://localhost:5000/view_details/${params.id}`)
       },
     ],
   },

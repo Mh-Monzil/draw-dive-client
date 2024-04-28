@@ -24,7 +24,7 @@ const AddCraftItem = () => {
 
     const artCraftInfo = { item_name, category_name, customization, photo, price, processing_time, rating, short_description, stock_status, user_name, user_email};
 
-    fetch("https://painting-server-wheat.vercel.app/craft_items", {
+    fetch("http://localhost:5000/craft_items", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json' 

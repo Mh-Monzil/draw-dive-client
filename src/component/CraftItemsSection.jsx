@@ -5,7 +5,7 @@ import CraftItemCard from "./CraftItemCard";
 const CraftItemsSection = () => {
     const [craftItems, setCraftItems] = useState([]);
     useEffect(() => {
-        fetch("https://painting-server-wheat.vercel.app/craft_items")
+        fetch("http://localhost:5000/craft_items")
         .then(res => res.json())
         .then(data => {
             setCraftItems(data.slice(0,6));

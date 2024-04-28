@@ -20,10 +20,11 @@ const AddCraftItem = () => {
     const user_name = user.displayName;
     const user_email = user.email;
 
-    const artCraftInfo = { item_name, category_name, customization, photo, price, processing_time, rating, short_description, stock_status, user_name, user_email};
-    console.log(artCraftInfo);
+    form.reset();
 
-    fetch("", {
+    const artCraftInfo = { item_name, category_name, customization, photo, price, processing_time, rating, short_description, stock_status, user_name, user_email};
+
+    fetch("https://painting-server-wheat.vercel.app/craft_items", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json' 

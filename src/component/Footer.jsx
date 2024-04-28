@@ -28,9 +28,9 @@ const Footer = () => {
   </nav>
   <form>
     <h6 className="footer-title">Newsletter</h6> 
-    <fieldset className="form-control w-80">
+    <fieldset className="form-control">
         <p className='font-medium mb-3'>Enter your email address</p>
-      <div className="join">
+      <div className="sm:join flex flex-col sm:flex-row space-y-2 sm:space-y-0">
         <input type="text" placeholder="username@site.com" className="input input-bordered join-item" /> 
         <button className="btn bg-[#E76F51] join-item border-[#E76F51] text-white">Subscribe</button>
       </div>

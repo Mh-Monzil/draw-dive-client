@@ -8,7 +8,7 @@ const CraftItemsSection = () => {
         fetch("https://painting-server-wheat.vercel.app/craft_items")
         .then(res => res.json())
         .then(data => {
-            setCraftItems(data);
+            setCraftItems(data.slice(0,6));
         })
     },[])
     return (

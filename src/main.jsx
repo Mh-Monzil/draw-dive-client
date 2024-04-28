@@ -37,14 +37,19 @@ const router = createBrowserRouter([
       {
         path: "/all_art_craft",
         element: <AllArtCraft />,
+        loader: () => fetch("https://painting-server-wheat.vercel.app/craft_items")
       },
       {
         path: "/add-craft_item",
-        element: <AddCraftItem />,
+        element: <PrivateRoute>
+          <AddCraftItem />
+        </PrivateRoute>,
       },
       {
         path: "/my_art_craft_list",
-        element: <MyArtCraftList />,
+        element: <PrivateRoute>
+          <MyArtCraftList />
+        </PrivateRoute>,
       },
       {
         path: "/view_details/:id",

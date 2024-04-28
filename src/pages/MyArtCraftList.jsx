@@ -76,7 +76,7 @@ const MyArtCraftList = () => {
                 </div>
 
                 <div className="card-actions flex gap-6">
-                  <Link to={`/view_details/${item._id}`}>
+                  <Link to={`/update_item/${item._id}`}>
                     <button className="btn bg-[#ff7c5c] text-white hover:bg-[#fd6e4b] px-6">
                       Update
                     </button>

@@ -15,6 +15,7 @@ import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import ViewDetails from "./pages/ViewDetails.jsx";
+import UpdateItem from "./pages/UpdateItem.jsx";
 
 
 const router = createBrowserRouter([
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
         </PrivateRoute>,
         loader: ({params}) => fetch(`http://localhost:5000/view_details/${params.id}`)
       },
+      {
+        path: "/update_item/:id",
+        element: <UpdateItem />,
+        loader: ({params}) => fetch(`http://localhost:5000/craft_items/${params.id}`)
+      }
     ],
   },
 ]);

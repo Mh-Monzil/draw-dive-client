@@ -101,7 +101,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end  font-semibold">
         {loading ? (
-          <span className="loading loading-spinner text-info"></span>
+          <span className="loading loading-spinner text-error"></span>
         ) : !loading && user ? (
           <Profile user={user} />
         ) : !loading && !user ? (

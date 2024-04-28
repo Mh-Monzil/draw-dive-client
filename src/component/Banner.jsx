@@ -1,16 +1,14 @@
 import bgImage1 from "../assets/banner/draw-banner1.png";
 import bgImage2 from "../assets/banner/draw-banner2.png";
 import bgImage3 from "../assets/banner/draw-banner3.png";
-
 import { useRef } from "react";
+
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-
 // import required modules
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 
@@ -38,14 +36,14 @@ const Banner = () => {
         navigation={true}
         modules={[Autoplay, Pagination, Navigation]}
         onAutoplayTimeLeft={onAutoplayTimeLeft}
-        className="mySwiper h-[75vh] rounded-3xl"
+        className="mySwiper h-[75vh] "
       >
         <SwiperSlide className="relative">
           <div
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage1})`,
             }}
-            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center -z-10"
+            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center -z-10 rounded-3xl"
           >
             <h2
               data-aos="fade-right"
@@ -82,7 +80,7 @@ const Banner = () => {
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage2})`,
             }}
-            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center"
+            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center rounded-3xl"
           >
             <h2 className="text-4xl md:text-5xl font-bold md:w-[600px] text-center leading-10 md:leading-[70px]">
               Where Every Stroke Tells a Story
@@ -104,7 +102,7 @@ const Banner = () => {
             style={{
               backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${bgImage3})`,
             }}
-            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center"
+            className=" flex flex-col items-center justify-center w-full h-full text-white  bg-cover bg-center rounded-3xl"
           >
             <h2 className="text-4xl md:text-5xl font-bold md:w-[600px] text-center leading-10 md:leading-[70px] px-2">
               Brush to Canvas, Dreams to Reality

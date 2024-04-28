@@ -13,6 +13,9 @@ import MyArtCraftList from './pages/MyArtCraftList.jsx';
 import AuthProvider from "./provider/AuthProvider.jsx";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
+import ViewDetails from "./pages/ViewDetails.jsx";
+
 
 const router = createBrowserRouter([
   {
@@ -42,6 +45,13 @@ const router = createBrowserRouter([
       {
         path: "/my_art_craft_list",
         element: <MyArtCraftList />,
+      },
+      {
+        path: "/view_details/:id",
+        element: <PrivateRoute>
+          <ViewDetails />
+        </PrivateRoute>,
+        loader: ({params}) => fetch(`https://painting-server-wheat.vercel.app/view_details/${params.id}`)
       },
     ],
   },

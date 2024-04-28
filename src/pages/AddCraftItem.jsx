@@ -10,18 +10,20 @@ const AddCraftItem = () => {
     const form = e.target;
     const item_name = form.item_name.value;
     const category_name = form.category_name.value;
-    const customizable = form.customizable.value;
+    const customization = form.customization.value;
     const photo = form.photo.value;
     const price = form.price.value;
     const processing_time = form.processing_time.value;
     const rating = form.rating.value;
     const short_description = form.short_description.value;
     const stock_status = form.stock_status.value;
+    const user_name = user.displayName;
+    const user_email = user.email;
 
-    const artCraftInfo = { item_name, category_name, customizable, photo, price, processing_time, rating, short_description, stock_status };
+    const artCraftInfo = { item_name, category_name, customization, photo, price, processing_time, rating, short_description, stock_status, user_name, user_email};
     console.log(artCraftInfo);
 
-    fetch("http://localhost:5000/art_craft_items", {
+    fetch("", {
         method: "POST",
         headers: { 
             'Content-Type': 'application/json' 
@@ -129,9 +131,7 @@ const AddCraftItem = () => {
               </label>
               <div className="relative">
                 <input
-                  type="number"
-                  min='1'
-                  max='5'
+                  type="text"
                   name="rating"
                   placeholder="Enter your name"
                   className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
@@ -157,12 +157,12 @@ const AddCraftItem = () => {
             {/* input  */}
             <div>
               <label className="label">
-                <span className="font-semibold">Customizable</span>
+                <span className="font-semibold">Customization</span>
               </label>
               {/* <div className="relative"> */}
               <select
                 id="country"
-                name="customizable"
+                name="customization"
                 className=" w-full pr-10 p-2.5 text-base border-2 border-red-100 focus:outline-none  focus:border-red-300 sm:text-sm rounded-md font-semibold"
                 required
               >

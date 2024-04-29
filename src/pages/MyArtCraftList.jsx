@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import UseAuth from "../hooks/UseAuth";
 import { Link } from "react-router-dom";
+import Swal from 'sweetalert2'
 
 const MyArtCraftList = () => {
   const { user } = UseAuth();
@@ -17,7 +18,17 @@ const MyArtCraftList = () => {
   }, []);
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:5000/craft_items/${id}`, {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/craft_items/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
@@ -25,7 +36,15 @@ const MyArtCraftList = () => {
         console.log(data);
         const remaining = myItems?.filter((item) => item._id !== id);
         setMyItems(remaining);
+        
       });
+        Swal.fire({
+          title: "Deleted!",
+          text: "Craft item has been deleted.",
+          icon: "success"
+        });
+      }
+    });
   };
 
   const filter = (value1,value2) => {

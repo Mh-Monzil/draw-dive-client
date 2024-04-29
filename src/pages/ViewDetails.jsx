@@ -6,7 +6,7 @@ const ViewDetails = () => {
   const {
     _id,
     item_name,
-    category_name,
+    subcategory_name,
     customization,
     photo,
     price,
@@ -22,7 +22,7 @@ const ViewDetails = () => {
       </div>
       <div className="w-full md:w-1/2">
         <h2 className="text-2xl md:text-4xl font-semibold text-[#E76F51]">{item_name}</h2>
-        <p className="text-xl font-medium py-2">Category: {category_name}</p>
+        <p className="text-xl font-medium py-2">Category: {subcategory_name}</p>
         <p className="mt-2 md:mt-4 font-medium text-lg">{short_description}</p>
         <div className="my-3 md:my-5 space-y-1">
           <p className="font-medium">

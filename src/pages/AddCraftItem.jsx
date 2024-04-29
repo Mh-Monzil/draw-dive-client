@@ -9,7 +9,7 @@ const AddCraftItem = () => {
     e.preventDefault();
     const form = e.target;
     const item_name = form.item_name.value;
-    const category_name = form.category_name.value;
+    const subcategory_name = form.subcategory_name.value;
     const customization = form.customization.value;
     const photo = form.photo.value;
     const price = form.price.value;
@@ -22,7 +22,7 @@ const AddCraftItem = () => {
 
     form.reset();
 
-    const artCraftInfo = { item_name, category_name, customization, photo, price, processing_time, rating, short_description, stock_status, user_name, user_email};
+    const artCraftInfo = { item_name, subcategory_name, customization, photo, price, processing_time, rating, short_description, stock_status, user_name, user_email};
 
     fetch("http://localhost:5000/craft_items", {
         method: "POST",
@@ -91,7 +91,7 @@ const AddCraftItem = () => {
               {/* <div className="relative"> */}
               <select
                 id="country"
-                name="category_name"
+                name="subcategory_name"
                 className=" w-full pr-10 p-2.5 text-base border-2 border-red-100 focus:outline-none  focus:border-red-300 sm:text-sm rounded-md font-semibold"
                 required
               >

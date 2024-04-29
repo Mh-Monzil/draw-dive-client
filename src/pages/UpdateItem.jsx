@@ -7,7 +7,7 @@ const UpdateItem = () => {
     const {
         _id,
         item_name,
-        category_name,
+        subcategory_name,
         customization,
         photo,
         price,
@@ -21,7 +21,7 @@ const UpdateItem = () => {
         e.preventDefault();
         const form = e.target;
         const item_name = form.item_name.value;
-        const category_name = form.category_name.value;
+        const subcategory_name = form.subcategory_name.value;
         const customization = form.customization.value;
         const photo = form.photo.value;
         const price = form.price.value;
@@ -31,7 +31,7 @@ const UpdateItem = () => {
         const stock_status = form.stock_status.value;
     
     
-        const updatedInfo = { item_name, category_name, customization, photo, price, processing_time, rating, short_description, stock_status};
+        const updatedInfo = { item_name, subcategory_name, customization, photo, price, processing_time, rating, short_description, stock_status};
         console.log(updatedInfo);
         fetch(`http://localhost:5000/craft_items/${_id}`, {
             method: "PUT",
@@ -99,9 +99,9 @@ const UpdateItem = () => {
               {/* <div className="relative"> */}
               <select
                 id="country"
-                name="category_name"
+                name="subcategory_name"
                 className=" w-full pr-10 p-2.5 text-base border-2 border-red-100 focus:outline-none  focus:border-red-300 sm:text-sm rounded-md font-semibold"
-                defaultValue={category_name}
+                defaultValue={subcategory_name}
                 required
               >
                 <option className="font-semibold" value="Landscape Painting">Landscape Painting</option>

@@ -65,7 +65,7 @@ const MyArtCraftList = () => {
       <h2 className="text-3xl font-semibold text-center my-5">
         My Art Craft List
       </h2>
-      <div className="w-full flex justify-end">
+      <div className="w-full flex justify-end my-4">
         <details className="dropdown ">
           <summary className="m-1 btn bg-[#ff7c5c] text-white hover:bg-[#fd6e4b]">open or close</summary>
           <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">

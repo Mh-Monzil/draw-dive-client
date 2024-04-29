@@ -17,6 +17,7 @@ import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import ViewDetails from "./pages/ViewDetails.jsx";
 import UpdateItem from "./pages/UpdateItem.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
+import CategoriesSection from "./component/CategoriesSection.jsx";
 
 
 const router = createBrowserRouter([
@@ -65,7 +66,7 @@ const router = createBrowserRouter([
         path: "/update_item/:id",
         element: <UpdateItem />,
         loader: ({params}) => fetch(`http://localhost:5000/craft_items/${params.id}`)
-      }
+      },
     ],
   },
 ]);

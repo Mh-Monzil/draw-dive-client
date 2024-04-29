@@ -1,4 +1,5 @@
 import Banner from "../component/Banner";
+import CategoriesSection from "../component/CategoriesSection";
 import CraftItemsSection from "../component/CraftItemsSection";
 
 
@@ -7,6 +8,7 @@ const Home = () => {
         <div>
             <Banner />
             <CraftItemsSection />
+            <CategoriesSection />
         </div>
     );
 };

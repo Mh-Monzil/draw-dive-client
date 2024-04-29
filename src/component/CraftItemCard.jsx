@@ -4,7 +4,7 @@ const CraftItemCard = ({ item }) => {
   const {
     _id,
     item_name,
-    category_name,
+    subcategory_name,
     customization,
     photo,
     price,

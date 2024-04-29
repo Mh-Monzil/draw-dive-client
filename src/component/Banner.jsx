@@ -2,6 +2,9 @@ import bgImage1 from "../assets/banner/draw-banner1.png";
 import bgImage2 from "../assets/banner/draw-banner2.png";
 import bgImage3 from "../assets/banner/draw-banner3.png";
 import { useRef } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+AOS.init();
 
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";

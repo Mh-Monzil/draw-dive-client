@@ -1,5 +1,5 @@
 import { useLoaderData, useParams } from "react-router-dom";
-
+import Swal from 'sweetalert2'
 
 const UpdateItem = () => {
     const singleItem = useLoaderData();
@@ -42,7 +42,15 @@ const UpdateItem = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data);
+            if(data.modifiedCount > 0){
+              Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Data updated successfully",
+                showConfirmButton: false,
+                timer: 1500
+              });
+            }
         })
       };
 

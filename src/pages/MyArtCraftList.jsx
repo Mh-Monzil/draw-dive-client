@@ -28,17 +28,43 @@ const MyArtCraftList = () => {
       });
   };
 
+  const filter = (value1,value2) => {
+
+    setMyItems([...myItems].sort((a, b) => {
+      if (a.customization === value1 && b.customization === value2) {
+          return -1; // "yes" age 
+      } else if (a.customization === value2 && b.customization === value1) {
+          return 1; // "no" pore
+      } else {
+          return 0; // 
+      }
+  }))
+  }
+
   return (
     <div>
       <h2 className="text-3xl font-semibold text-center my-5">
         My Art Craft List
       </h2>
+      <div className="w-full flex justify-end">
+        <details className="dropdown ">
+          <summary className="m-1 btn bg-[#ff7c5c] text-white hover:bg-[#fd6e4b]">open or close</summary>
+          <ul className="p-2 shadow menu dropdown-content z-[1] bg-base-100 rounded-box w-52">
+            <li>
+              <button onClick={() => filter("Yes", "No")}>Yes</button>
+            </li>
+            <li>
+              <button onClick={() => filter("No", "Yes")}>No</button>
+            </li>
+          </ul>
+        </details>
+      </div>
       {myItems?.length !== 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
           {myItems?.map((item) => (
             <div
               key={item._id}
-              className="card bg-base-100 border p-6 hover:scale-105 transition-all duration-500"
+              className="card bg-base-100 border p-6 hover:bg-red-50 transition-all duration-300"
             >
               <figure className="">
                 <img
@@ -92,10 +118,13 @@ const MyArtCraftList = () => {
           ))}
         </div>
       ) : (
-        <p className="text-xl font-semibold text-center mt-60 h-[25vh]">No items added yet</p>
+        <p className="text-xl font-semibold text-center mt-60 h-[25vh]">
+          No items added yet
+        </p>
       )}
     </div>
   );
 };
 
 export default MyArtCraftList;
+

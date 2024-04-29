@@ -4,12 +4,11 @@ import { Link } from "react-router-dom";
 
 const MyArtCraftList = () => {
   const { user } = UseAuth();
-  const [myItems, setMyItems] = useState();
-  const { email } = user;
-  console.log(email);
+  const [myItems, setMyItems] = useState([]);
+  console.log(user?.email);
   console.log(myItems);
   useEffect(() => {
-    fetch(`http://localhost:5000/craft_items/${email}`)
+    fetch(`http://localhost:5000/craft_items/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

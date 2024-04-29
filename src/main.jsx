@@ -16,12 +16,14 @@ import 'react-toastify/dist/ReactToastify.css';
 import PrivateRoute from "./PrivateRoute/PrivateRoute.jsx";
 import ViewDetails from "./pages/ViewDetails.jsx";
 import UpdateItem from "./pages/UpdateItem.jsx";
+import ErrorPage from "./pages/ErrorPage.jsx";
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",

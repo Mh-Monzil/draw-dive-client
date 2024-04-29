@@ -20,7 +20,7 @@ const CraftItemCard = ({ item }) => {
       </figure>
       <div className="mt-4 flex flex-col">
         <h2 className="card-title">{item_name}</h2>
-        <p className="my-2">{short_description}</p>
+        <p className="my-2 h-[100px]">{short_description}</p>
         <div className="flex flex-col sm:flex-row gap-5 my-4">
           <span className="bg-[#fff2ee] py-2 px-6 text-[#E76F51] font-semibold text-lg rounded-full w-fit">
             ${price}

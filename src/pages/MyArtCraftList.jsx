@@ -95,7 +95,7 @@ const MyArtCraftList = () => {
 
               <div className="mt-4 flex flex-col">
                 <h2 className="card-title">{item.item_name}</h2>
-                <p className="my-2">{item.short_description}</p>
+                <p className="my-2 h-[80px]">{item.short_description}</p>
                 <div className="my-2 space-y-1">
                   <p className="font-medium">
                     <span className="font-semibold">Processing Time: </span>
@@ -119,9 +119,9 @@ const MyArtCraftList = () => {
                   </span>
                 </div>
 
-                <div className="card-actions flex gap-6">
+                <div className=" flex gap-6 align-bottom mt-auto">
                   <Link to={`/update_item/${item._id}`}>
-                    <button className="btn bg-[#ff7c5c] text-white hover:bg-[#fd6e4b] px-6">
+                    <button className="btn bg-[#ff7c5c] text-white hover:bg-[#fd6e4b] px-6 ">
                       Update
                     </button>
                   </Link>

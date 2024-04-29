@@ -1,5 +1,5 @@
-
 import UseAuth from "../hooks/UseAuth";
+import Swal from 'sweetalert2'
 
 const AddCraftItem = () => {
     const {user} = UseAuth();
@@ -34,6 +34,15 @@ const AddCraftItem = () => {
     .then(res => res.json())
     .then(data => {
         console.log(data);
+        if(data.insertedId){
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Craft Item Added Successfully",
+            showConfirmButton: false,
+            timer: 1500
+          });
+        }
     })
   };
 

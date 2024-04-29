@@ -46,7 +46,7 @@ const UpdateItem = () => {
               Swal.fire({
                 position: "top-end",
                 icon: "success",
-                title: "Data updated successfully",
+                title: "Craft Item updated successfully",
                 showConfirmButton: false,
                 timer: 1500
               });

@@ -60,7 +60,7 @@ const AddCraftItem = () => {
           data-aos-duration="300"
           data-aos-easing="ease-in-out"
           onSubmit={handleSubmit}
-          className="space-y-4 lg:w-3/5 my-12 h-full mx-auto p-6 md:p-10 bg-white backdrop-blur-sm rounded-lg  shadow-md shadow-red-100"
+          className="space-y-4 lg:w-3/5 my-12 h-full mx-auto p-6 md:p-10  backdrop-blur-sm rounded-lg  shadow-md shadow-red-100"
         >
           <div className="flex justify-center mb-2">
             <span className="text-center text-2xl font-bold border-b-[3px] border-b-[#E76F51] px-4">

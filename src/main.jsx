@@ -18,6 +18,7 @@ import ViewDetails from "./pages/ViewDetails.jsx";
 import UpdateItem from "./pages/UpdateItem.jsx";
 import ErrorPage from "./pages/ErrorPage.jsx";
 import CategoriesSection from "./component/CategoriesSection.jsx";
+import ItemByCategory from "./component/ItemByCategory.jsx";
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,12 @@ const router = createBrowserRouter([
         element: <UpdateItem />,
         loader: ({params}) => fetch(`http://localhost:5000/craft_items/${params.id}`)
       },
+      {
+        path: "/categories/:id",
+        element: <ItemByCategory />,
+        loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+      }
+      
     ],
   },
 ]);

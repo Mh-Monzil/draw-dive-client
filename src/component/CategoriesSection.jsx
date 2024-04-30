@@ -7,7 +7,7 @@ const CategoriesSection = () => {
     const [subCategories, setSubCategories] = useState([]);
     
     useEffect(() => {
-        fetch("http://localhost:5000/categories")
+        fetch("https://painting-server-wheat.vercel.app/categories")
         .then(res => res.json())
         .then(data => {
             setSubCategories(data)
@@ -17,7 +17,7 @@ const CategoriesSection = () => {
     
 
   return (
-    <div className="mt-24">
+    <div className="mt-12 md:mt-24">
       
       <h2 className="text-4xl font-semibold text-center"> All Art & Craft Categories</h2>
       <p className="font-medium text-center max-w-[650px] mx-auto my-6">Discover a range of handmade items, from unique jewelry and textiles to custom paintings and sculpted ceramics, perfect for creative enthusiasts.</p>

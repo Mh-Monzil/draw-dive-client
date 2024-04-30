@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/all_art_craft",
         element: <AllArtCraft />,
-        loader: () => fetch("http://localhost:5000/craft_items")
+        loader: () => fetch("https://painting-server-wheat.vercel.app/craft_items")
       },
       {
         path: "/add-craft_item",
@@ -61,17 +61,17 @@ const router = createBrowserRouter([
         element: <PrivateRoute>
           <ViewDetails />
         </PrivateRoute>,
-        loader: ({params}) => fetch(`http://localhost:5000/view_details/${params.id}`)
+        loader: ({params}) => fetch(`https://painting-server-wheat.vercel.app/view_details/${params.id}`)
       },
       {
         path: "/update_item/:id",
         element: <UpdateItem />,
-        loader: ({params}) => fetch(`http://localhost:5000/craft_items/${params.id}`)
+        loader: ({params}) => fetch(`https://painting-server-wheat.vercel.app/craft_items/${params.id}`)
       },
       {
         path: "/categories/:id",
         element: <ItemByCategory />,
-        loader: ({params}) => fetch(`http://localhost:5000/categories/${params.id}`)
+        loader: ({params}) => fetch(`https://painting-server-wheat.vercel.app/categories/${params.id}`)
       }
       
     ],

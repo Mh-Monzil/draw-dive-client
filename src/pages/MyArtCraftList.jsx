@@ -9,7 +9,7 @@ const MyArtCraftList = () => {
   console.log(user?.email);
   console.log(myItems);
   useEffect(() => {
-    fetch(`http://localhost:5000/craft_items/user/${user?.email}`)
+    fetch(`https://painting-server-wheat.vercel.app/craft_items/user/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -28,7 +28,7 @@ const MyArtCraftList = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/craft_items/${id}`, {
+        fetch(`https://painting-server-wheat.vercel.app/craft_items/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

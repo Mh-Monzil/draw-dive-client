@@ -33,7 +33,7 @@ const UpdateItem = () => {
     
         const updatedInfo = { item_name, subcategory_name, customization, photo, price, processing_time, rating, short_description, stock_status};
         console.log(updatedInfo);
-        fetch(`http://localhost:5000/craft_items/${_id}`, {
+        fetch(`https://painting-server-wheat.vercel.app/craft_items/${_id}`, {
             method: "PUT",
             headers: { 
                 'Content-Type': 'application/json' 

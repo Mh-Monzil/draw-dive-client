@@ -11,7 +11,7 @@ const ItemByCategory = () => {
     const [allSubCategories, setAllSubCategories] = useState([]);
     
     useEffect(() => {
-        fetch("http://localhost:5000/craft_items")
+        fetch("https://painting-server-wheat.vercel.app/craft_items")
         .then(res => res.json())
         .then(data => {
             setAllSubCategories(data);
@@ -32,7 +32,7 @@ const ItemByCategory = () => {
                 itemsByCategoryName?.map(item => 
                     <div
                     key={item._id}
-                    className="card bg-base-100 border p-3 md:p-6 hover:bg-red-50 transition-all duration-300"
+                    className="card bg-base-100 border p-3 md:p-6  transition-all duration-300"
                   >
                     <figure className="">
                       <img

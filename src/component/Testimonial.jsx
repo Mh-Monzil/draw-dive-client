@@ -5,7 +5,7 @@ import client3 from "../assets/clients/client3.jpg";
 
 const Testimonial = () => {
   return (
-    <section className="mt-24 max-w-7xl mx-auto">
+    <section className="mt-12 md:mt-24 max-w-7xl mx-auto">
       <div className="container flex flex-col items-center mx-auto md:p-10 md:px-12">
         <h1 className="p-4 text-4xl font-bold  text-center">
           What Our Client Say?
@@ -24,7 +24,7 @@ const Testimonial = () => {
                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                 <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
               </svg>
-              <p className="h-60">DrawDive is a vibrant platform that sparks creativity! The site's intuitive design and diverse resources make every artist feel right at home.</p>
+              <p className="h-64">DrawDive is a vibrant platform that sparks creativity! The site's intuitive design and diverse resources make every artist feel right at home.</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -60,7 +60,7 @@ const Testimonial = () => {
                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                 <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
               </svg>
-              <p className="h-60">Exploring DrawDive is a joy! Its extensive gallery and interactive tutorials cater to both beginners and professionals seeking to enhance their skills.</p>
+              <p className="h-64">Exploring DrawDive is a joy! Its extensive gallery and interactive tutorials cater to both beginners and professionals seeking to enhance their skills.</p>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -96,7 +96,7 @@ const Testimonial = () => {
                 <path d="M232,246.857V16H16V416H54.4ZM48,48H200V233.143L48,377.905Z"></path>
                 <path d="M280,416h38.4L496,246.857V16H280ZM312,48H464V233.143L312,377.905Z"></path>
               </svg>
-              <p className="h-60">
+              <p className="h-64">
 			  DrawDive offers a fantastic blend of inspiration and practical advice. Its community features and expert tips truly support and enrich the artistic journey.
 			  </p>
               <svg

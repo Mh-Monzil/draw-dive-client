@@ -3,8 +3,8 @@ import contactAnimation from '../assets/contact.json';
 
 const Contact = () => {
   return (
-    <section className="py-6  mt-24">
-      <h2 className="text-center font-semibold text-4xl mb-12">Contact Us</h2>
+    <section className="py-6 mt-12 md:mt-24">
+      <h2 className="text-center font-semibold text-4xl mb-6 md:mb-12">Contact Us</h2>
       <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x">
         <div className="py-6 md:py-0 md:px-6">
           <Lottie className="" animationData={contactAnimation} ></Lottie>

@@ -6,13 +6,15 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCL8A7PGsW1E555nNxjQAcND1UBFckfuY8",
-  authDomain: "draw-dive.firebaseapp.com",
-  projectId: "draw-dive",
-  storageBucket: "draw-dive.appspot.com",
-  messagingSenderId: "765187082026",
-  appId: "1:765187082026:web:39b1e59fc0b1f01aab4053"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN,
+  projectId: import.meta.env.VITE_PROJECTID,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID,
+  appId: import.meta.env.VITE_APPID,
 };
+
+
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);

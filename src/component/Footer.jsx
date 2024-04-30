@@ -4,7 +4,7 @@ import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
 const Footer = () => {
   return (
     <>
-      <footer className="footer p-10 bg-[#202942] text-gray-300 mt-24">
+      <footer className="footer p-10 bg-[#202942] text-gray-300 mt-12 md:mt-24">
         <aside>
           <h2 className="text-2xl font-bold">
             Draw<span className="text-[#E76F51]">Dive</span>

@@ -105,8 +105,8 @@ const Navbar = () => {
   return (
     <div className={`${
       scroll
-        ? `navbar max-w-[1440px] mx-auto fixed top-0 py-3 z-30 pr-6 lg:pr-10 ${bgColor} `
-        : "navbar max-w-[1440px] mx-auto py-3 z-30 "
+        ? `navbar max-w-[1440px] mx-auto fixed top-0 py-3 z-30 md:px-6 lg:px-10 ${bgColor} `
+        : "navbar max-w-[1440px] mx-auto py-3 z-30 md:px-8"
     }`}>
       <div className="navbar-start ">
         <div

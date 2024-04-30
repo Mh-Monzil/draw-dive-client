@@ -19,7 +19,7 @@ const CategoriesSection = () => {
   return (
     <div className="mt-24">
       
-      <h2 className="text-4xl font-semibold text-center"> You Can Find Here</h2>
+      <h2 className="text-4xl font-semibold text-center"> All Art & Craft Categories</h2>
       <p className="font-medium text-center max-w-[650px] mx-auto my-6">Discover a range of handmade items, from unique jewelry and textiles to custom paintings and sculpted ceramics, perfect for creative enthusiasts.</p>
       <div 
    className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-16 p-6">

@@ -7,9 +7,16 @@ const Navbar = () => {
   const { user, loading } = UseAuth();
   const [showDropdown, setShowDropdown] = useState(false);
   const [theme, setTheme] = useState('light');
+  const [bgColor, setBgColor] = useState(null);
+  
 
   useEffect(() => {
     document.querySelector("html").setAttribute("data-theme", theme)
+    if(theme === 'light'){
+      setBgColor('bg-white')
+    }else{
+      setBgColor('bg-[#0F172A]')
+    }
   },[theme])
 
   const handleTheme = (e) => {
@@ -19,11 +26,13 @@ const Navbar = () => {
       setTheme('light')
     }
   }
-  console.log(theme);
+  // console.log(theme);
+
+
 
   const [scroll, setScroll] = useState(false);
 
-  const TOP_OFFSET = 70;
+  const TOP_OFFSET = 80;
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,8 +58,8 @@ const Navbar = () => {
           isPending
             ? ""
             : isActive
-            ? "text-lg font-medium relative after:content-['']  after:w-full after:h-[3px] after:absolute after:left-0 after:-bottom-1 after:bg-[#E76F51]  px-1"
-            : "px-1 text-lg font-medium hover:text-[#da5432] transition-all duration-300"
+            ? `text-lg font-medium relative after:content-['']  after:w-full after:h-[3px] after:absolute after:left-0 after:-bottom-1 after:bg-[#E76F51]  px-1 `
+            : `px-1 text-lg font-medium hover:text-[#da5432] transition-all duration-300 `
         }
       >
         Home
@@ -96,7 +105,7 @@ const Navbar = () => {
   return (
     <div className={`${
       scroll
-        ? "navbar max-w-[1440px] mx-auto fixed top-0 py-3 z-30 lg:px-10 backdrop-blur-3xl bg-white dark:bg-black transition-all "
+        ? `navbar max-w-[1440px] mx-auto fixed top-0 py-3 z-30 lg:px-10 ${bgColor} `
         : "navbar max-w-[1440px] mx-auto py-3 z-30 lg:px-10  "
     }`}>
       <div className="navbar-start ">
@@ -139,7 +148,30 @@ const Navbar = () => {
         <ul className="menu menu-horizontal px-1 space-x-7">{NavLinks}</ul>
       </div>
       <div className="navbar-end  font-semibold">
-        <label className="swap swap-rotate pr-2">
+        
+        {loading ? (
+          <span className="loading loading-spinner text-error"></span>
+        ) : !loading && user ? (
+          <Profile user={user} />
+        ) : !loading && !user ? (
+          <div className="flex gap-3">
+            <Link
+              to="/register"
+              className="px-5 py-2 rounded-lg -skew-x-12 bg-[#E76F51] hover:bg-[#da5432] hidden sm:flex text-white"
+            >
+              Register
+            </Link>
+            <Link
+              to="/login"
+              className="px-5 py-2 rounded-lg -skew-x-12 bg-[#E76F51] hover:bg-[#da5432] text-white"
+            >
+              Login
+            </Link>
+          </div>
+        ) : (
+          ""
+        )}
+        <label className="swap swap-rotate pl-2">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"
@@ -165,28 +197,6 @@ const Navbar = () => {
             <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-        {loading ? (
-          <span className="loading loading-spinner text-error"></span>
-        ) : !loading && user ? (
-          <Profile user={user} />
-        ) : !loading && !user ? (
-          <div className="flex gap-3">
-            <Link
-              to="/register"
-              className="px-5 py-2 rounded-lg -skew-x-12 bg-[#E76F51] hover:bg-[#da5432] hidden sm:flex text-white"
-            >
-              Register
-            </Link>
-            <Link
-              to="/login"
-              className="px-5 py-2 rounded-lg -skew-x-12 bg-[#E76F51] hover:bg-[#da5432] text-white"
-            >
-              Login
-            </Link>
-          </div>
-        ) : (
-          ""
-        )}
       </div>
     </div>
   );

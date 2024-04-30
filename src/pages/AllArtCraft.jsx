@@ -20,16 +20,24 @@ const AllArtCraft = () => {
       confirmButtonText: "Yes, delete it!"
     }).then((result) => {
       if (result.isConfirmed) {
-        const remaining = allArtCraft.filter(item => item._id !== id);
+        fetch(`http://localhost:5000/craft_items/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        const remaining = all?.filter((item) => item._id !== id);
         setAllArtCraft(remaining);
+        
+      });
         Swal.fire({
           title: "Deleted!",
-          text: "Your file has been deleted.",
+          text: "Craft item has been deleted.",
           icon: "success"
         });
       }
     });
-  }
+  };
 
   return (
     <div className=" md:px-10">

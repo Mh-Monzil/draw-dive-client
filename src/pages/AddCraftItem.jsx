@@ -67,7 +67,7 @@ const AddCraftItem = () => {
               Add your art & craft
             </span>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="md:grid md:grid-cols-2 gap-5">
             {/* input  */}
             <div>
               <label className="label">
@@ -78,7 +78,7 @@ const AddCraftItem = () => {
                   type="name"
                   name="item_name"
                   placeholder="Enter your name"
-                  className="input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
+                  className=" input border-2 border-red-100 focus:border-red-300 focus:outline-none font-medium w-full"
                   required
                 />
               </div>

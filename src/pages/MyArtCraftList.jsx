@@ -83,7 +83,7 @@ const MyArtCraftList = () => {
           {myItems?.map((item) => (
             <div
               key={item._id}
-              className="card bg-base-100 border p-6 hover:bg-red-50 transition-all duration-300"
+              className="card bg-base-100 border p-6 hover:scale-95 transition-all duration-300"
             >
               <figure className="">
                 <img

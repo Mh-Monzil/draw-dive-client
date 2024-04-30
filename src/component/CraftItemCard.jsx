@@ -14,7 +14,7 @@ const CraftItemCard = ({ item }) => {
     stock_status,
   } = item;
   return (
-    <div className="card bg-base-100 border p-6 hover:scale-105 transition-all duration-500">
+    <div className="card bg-base-100 border p-4 md:p-6 hover:scale-105 transition-all duration-500">
       <figure className="">
         <img src={photo} alt="Shoes" className="rounded-xl h-60 w-full" />
       </figure>

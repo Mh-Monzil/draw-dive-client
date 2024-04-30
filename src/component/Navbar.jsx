@@ -105,8 +105,8 @@ const Navbar = () => {
   return (
     <div className={`${
       scroll
-        ? `navbar max-w-[1440px] mx-auto fixed top-0 py-3 z-30 lg:px-10 ${bgColor} `
-        : "navbar max-w-[1440px] mx-auto py-3 z-30 lg:px-10  "
+        ? `navbar max-w-[1440px] mx-auto fixed top-0 py-3 z-30 pr-6 lg:pr-10 ${bgColor} `
+        : "navbar max-w-[1440px] mx-auto py-3 z-30 "
     }`}>
       <div className="navbar-start ">
         <div
@@ -171,7 +171,7 @@ const Navbar = () => {
         ) : (
           ""
         )}
-        <label className="swap swap-rotate pl-2">
+        <label className="swap swap-rotate pl-2 md:pl-4">
           {/* this hidden checkbox controls the state */}
           <input
             type="checkbox"

@@ -1,6 +1,8 @@
 import Banner from "../component/Banner";
 import CategoriesSection from "../component/CategoriesSection";
 import CraftItemsSection from "../component/CraftItemsSection";
+import Contact from '../component/Contact';
+import Testimonial from "../component/Testimonial";
 
 
 const Home = () => {
@@ -9,6 +11,8 @@ const Home = () => {
             <Banner />
             <CraftItemsSection />
             <CategoriesSection />
+            <Testimonial />
+            <Contact />
         </div>
     );
 };
